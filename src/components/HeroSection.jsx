@@ -290,26 +290,28 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Scroll Indicator */}
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer z-10"
-        onClick={scrollToExplore}
-      >
-        <svg className="w-5 h-5 text-gray-400 dark:text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-          <rect x="7" y="3" width="10" height="18" rx="5" />
-          <path d="M12 7v4" />
-        </svg>
-        <div className="w-5 h-8 border border-gray-300 dark:border-gray-500/30 rounded-full flex justify-center p-1">
-          <motion.div
-            initial={{ scaleY: 0, originY: 0 }}
-            animate={{ scaleY: [0, 1, 1, 0], originY: [0, 0, 1, 1] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-0.5 h-2.5 bg-accent/60 rounded-full"
-          />
-        </div>
-        <span className="text-xs text-gray-400 dark:text-gray-500 tracking-wider">Scroll to explore</span>
-      </motion.div>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-2 cursor-pointer"
+          onClick={scrollToExplore}
+        >
+          <svg className="w-5 h-5 text-gray-400 dark:text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <rect x="7" y="3" width="10" height="18" rx="5" />
+            <path d="M12 7v4" />
+          </svg>
+          <div className="w-5 h-8 border border-gray-300 dark:border-gray-500/30 rounded-full flex justify-center p-1">
+            <motion.div
+              initial={{ scaleY: 0, originY: 0 }}
+              animate={{ scaleY: [0, 1, 1, 0], originY: [0, 0, 1, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="w-0.5 h-2.5 bg-accent/60 rounded-full"
+            />
+          </div>
+          <span className="text-xs text-gray-400 dark:text-gray-500 tracking-wider">Scroll to explore</span>
+        </motion.div>
+      </div>
     </section>
   );
 }
